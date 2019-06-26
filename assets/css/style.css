@@ -33,6 +33,9 @@ header {
     padding: 10px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 main {
     grid-area: main;
@@ -45,7 +48,20 @@ footer {
     align-self: end;
 }
 
-/*Nested Grid*/
+/*Everything in the header*/
+.bs-img {
+    height: 55px;
+    background: 
+}
+.h-flex1 {
+    order: 1;
+    width: 80px;
+}
+.h-flex2 {
+    order: 2;
+}
+
+/*Nested Grid inside main*/
 .grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -70,7 +86,7 @@ footer {
     align-self: center;
 }
 
-/*Button*/
+/*Hint Button*/
 #hint {
     background: #563D7C;
     border: none;
