@@ -12,27 +12,34 @@
 <body>
     <div class="grid-container">
         <header>
-            <h1>Hangman</h1>
+            <h1>Hangman Game</h1>
         </header>
          <main>
+             <!--Nesting a grid to be used as the player's UI-->
              <div class="grid">
                 <div class="picture">
-                    Picture goes here.
+                    <!--Picture appears here-->
                 </div>
                 <div class="tracker">
-                    Win: 0 Lose: 0
+                    <div id="winTracker">
+                        <!--Tracking win(s) with Javascript-->
+                    </div>
+                    <div id="loseTracker">
+                        <!--Tracking lose(s) with Javascript-->
+                    </div>
                 </div>
-                <div class="word-guess">
-                    <h3>_ _ _ _ _ _ _ _</h2>
+                <div class="underscores">
+                    <div class="underScore"></div>
+                    <button id="hint">Hint On Press</button>
                 </div>
-                <div class="hotbar">
-                    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <div id="guessed">
+                    <!--The letters that have been guessed will show up here-->
                 </div>
              </div>
         </main>
         <footer>
             <div>
-                This is the footer.
+                <!--This is the footer-->
             </div>
         </footer>
     </div>
