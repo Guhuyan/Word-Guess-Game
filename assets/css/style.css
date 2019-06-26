@@ -1,5 +1,93 @@
-main {
-    display: grid;
-    border: 2px dotted #fff;
+body {
+    background-color: #000;
+    color: #fff;
+}
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 32px;
+}
+h3 {
+    font-size: 24px;
+}
+p {
+    font-size: 12px;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 68px 1fr 1fr;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+header {
+    grid-area: header;
+    text-align: center;
+    background-color: purple;
+    padding: 10px;
+    border-bottom: 2px solid rgb(170, 20, 170);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+main {
+    grid-area: main;
+    text-align: center;
+    padding-top: 20px;
+}
+footer {
+    grid-area: footer;
+    text-align: center;
+    align-self: end;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "picture"
+    "tracker"
+    "word-guess"
+    "hotbar";
+}
+.picture {
+    grid-area: picture;
+}
+.word-guess {
+    grid-area: word-guess;
+}
+.tracker {
+    grid-area: tracker;
+}
+.hotbar {
+    grid-area: hotbar;
+    align-self: center;
+}
+
+@media screen and (min-width: 480px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "picture tracker"
+        "picture word-guess"
+        "hotbar hotbar";
+    }
+}
+@media screen and (min-width: 640px) {
+
+}
+@media screen and (min-width: 800px) {
+
+}
+@media screen and (min-width: 1024px) {
+
+}
+@media screen and (min-width: 1280px) {
+
+}
