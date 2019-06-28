@@ -64,12 +64,13 @@ footer {
 .grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: 1fr 200px 1fr 1fr 1fr;
     grid-template-areas: 
     "picture"
     "underscores"
     "tracker"
     "guessed"
+    "hint";
 }
 .picture {
     grid-area: picture;
@@ -84,14 +85,20 @@ footer {
 .tracker {
     grid-area: tracker;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.guessed {
+    grid-area: guessed;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-#guessed {
-    grid-area: guessed;
-    align-self: center;
+.hint {
+    grid-area: hint;
 }
+
 /*Underscores*/
 #underScores {
     color: #fff;
@@ -101,11 +108,11 @@ footer {
     background: #563D7C;
     border: none;
     color: white;
-    margin-top: 32px;
+    margin: 10px 0;
     padding: 5px 12px;
     border-radius: 10px;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none;--
     display: inline-block;
     font-size: 16px;
 }
@@ -121,11 +128,12 @@ footer {
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
         grid-template-areas: 
         "picture underscores"
         "picture underscores"
-        "guessed tracker";
+        "hint tracker"
+        "guessed guessed";
     }
     h1 {
         font-size: 48px;

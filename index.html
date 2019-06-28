@@ -27,24 +27,26 @@
                 </div>
                 <div class="underscores"> <!--Flex-->
                     <div id="underScores">_ _ _ _ _</div>
-                    <div>
-                        <button id="hint">Hint</button>
-                    </div>
                 </div>
                 <div class="tracker"> <!--Flex-->
                     <div class="win-tracker">
                         <p>Win:</p>
                         <!--Tracking win(s) with Javascript-->
-                        <p id="winTracker"></p>
+                        <p id="winTracker">0</p>
                     </div>
                     <div class="lose-tracker">
                         <p>Lose:</p>
                         <!--Tracking lose(s) with Javascript-->
-                        <p id="loseTracker"></p>
+                        <p id="loseTracker">0</p>
                     </div>
                 </div>
-                <div id="guessed">
-                    <!--The letters that have been guessed will show up here-->
+                <div class="guessed">
+                    <div id="guessedChar">
+                        Characters Already Guessed<!--The letters that have been guessed will show up here-->
+                    </div>
+                </div>
+                <div class="hint">
+                    <button id="hint">Hint</button>
                 </div>
              </div>
         </main>
