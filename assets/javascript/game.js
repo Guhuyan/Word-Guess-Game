@@ -11,15 +11,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let loseCounter = 0;
 
     //Computer pick a random word
-    let pickWord = words[Math.floor(Math.random() * words.length)];
-    console.log(pickWord);
-    //Create a variable and initialize it with underscore for each letter in the pickWord variable from above.
+    let chosenWord = words[Math.floor(Math.random() * words.length)];
+    console.log(chosenWord);
+
+    //Create an array and initialize it with underscore in each index, then pass it to #underScores in index.html
     let displayWord = [];
-    for (var i = 0; i < pickWord.length; i++) {
+    for (let i = 0; i < chosenWord.length; i++) {
       displayWord[i] = "_";
     }
-    //Begin with displaying the array in #underScores
     document.getElementById("underScores").textContent = displayWord.join(" ");
+
+    //Create an array to hold all the letters from the chosen word in its own index
+    correctWord = [];
+    for (let r = 0; r < chosenWord.length; r++) {
+      correctWord.push(chosenWord.charAt(r));
+    }
+    console.log(correctWord);
 
     //Adding event listener to listen for a keypress.  Once the key is pressed, record the key as a string into a variable called key.
     document.addEventListener("keypress", (event) => {
@@ -27,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       console.log(key);
       //Run though the length of the word that has been picked by the random number generator.
       //If the key matches the character at an index, then replace that index (previously an underscore) with the letter inside the key variable.
-      for (let k = 0; k < pickWord.length; k++) {
-        if (pickWord.charAt(k) == key) {
+      for (let k = 0; k < chosenWord.length; k++) {
+        if (chosenWord.charAt(k) == key) {
           displayWord[k] = key;
           console.log(displayWord);
           document.getElementById("underScores").textContent = displayWord.join(" ");
@@ -36,14 +43,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
       //If the key doesn't match any character inside the chosen word, then add the character into a pool consisting of characters that have already been guessed.
       //Reduces remaining guesses by 1.
-      if (pickWord.indexOf(key) === -1) {
+      if (chosenWord.indexOf(key) === -1) {
         displayGuess.push(key);
         document.getElementById("guessedChar").textContent = displayGuess.join(" ");
         remainingGuess--;
         if (remainingGuess < 1) {
           loseCounter++;
+          document.getElementById("loseTracker").textContent = loseCounter;
           alert("You lose!");
         }
+      }
+      if (JSON.stringify(displayWord) === JSON.stringify(correctWord)) {
+        winCounter++;
+        document.getElementById("winTracker").textContent = winCounter;
+        alert("You win!");
       }
     });
   });
