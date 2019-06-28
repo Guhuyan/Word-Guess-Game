@@ -25,17 +25,23 @@
                 <div class="picture">
                     <!--Picture appears here-->
                 </div>
-                <div class="tracker">
-                    <div id="winTracker">
-                        <!--Tracking win(s) with Javascript-->
-                    </div>
-                    <div id="loseTracker">
-                        <!--Tracking lose(s) with Javascript-->
+                <div class="underscores"> <!--Flex-->
+                    <div id="underScores">_ _ _ _ _</div>
+                    <div>
+                        <button id="hint">Hint</button>
                     </div>
                 </div>
-                <div class="underscores">
-                    <div class="underScore"></div>
-                    <button id="hint">Hint On Press</button>
+                <div class="tracker"> <!--Flex-->
+                    <div class="win-tracker">
+                        <p>Win:</p>
+                        <!--Tracking win(s) with Javascript-->
+                        <p id="winTracker"></p>
+                    </div>
+                    <div class="lose-tracker">
+                        <p>Lose:</p>
+                        <!--Tracking lose(s) with Javascript-->
+                        <p id="loseTracker"></p>
+                    </div>
                 </div>
                 <div id="guessed">
                     <!--The letters that have been guessed will show up here-->
