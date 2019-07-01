@@ -4,7 +4,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 h1 {
-    font-size: 36px;
+    font-size: 32px;
 }
 h2 {
     font-size: 32px;
@@ -13,7 +13,11 @@ h3 {
     font-size: 24px;
 }
 p {
-    font-size: 12px;
+    font-size: 16px;
+    padding: 2px;
+}
+.counters {
+    font-weight: bold;
 }
 
 /*Main Grid*/
@@ -64,13 +68,11 @@ footer {
 .grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 200px 1fr 1fr 1fr;
+    grid-template-rows: 200px 1fr 40px;
     grid-template-areas: 
-    "picture"
     "underscores"
     "tracker"
-    "guessed"
-    "hint";
+    "guessed";
 }
 .picture {
     grid-area: picture;
@@ -88,6 +90,7 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    height: 100px;
 }
 .guessed {
     grid-area: guessed;
@@ -102,6 +105,7 @@ footer {
 /*Underscores*/
 #underScores {
     color: #fff;
+    font-size: 24px;
 }
 /*Hint Button*/
 #hint {
@@ -112,7 +116,7 @@ footer {
     padding: 5px 12px;
     border-radius: 10px;
     text-align: center;
-    text-decoration: none;--
+    text-decoration: none;
     display: inline-block;
     font-size: 16px;
 }
@@ -130,24 +134,96 @@ footer {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(4, 1fr);
         grid-template-areas: 
-        "picture underscores"
-        "picture underscores"
-        "hint tracker"
+        ". ."
+        "underscores underscores"
+        ". ."
+        "tracker tracker"
         "guessed guessed";
     }
     h1 {
-        font-size: 48px;
+        font-size: 36px;
     }
 }
 @media screen and (min-width: 640px) {
-
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        ". ."
+        "underscores underscores"
+        ". ."
+        "tracker tracker"
+        "guessed guessed";
+    }
+    #underScores {
+        color: #fff;
+        font-size: 28px;
+    }
 }
 @media screen and (min-width: 800px) {
-
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        ". ."
+        "underscores underscores"
+        ". ."
+        "tracker tracker"
+        "guessed guessed";
+    }
+    h1 {
+        font-size: 38px;
+    }
+    #underScores {
+        color: #fff;
+        font-size: 32px;
+    }
+    p {
+        font-size: 18px;
+    }
 }
 @media screen and (min-width: 1024px) {
-
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        ". ."
+        "underscores underscores"
+        ". ."
+        "tracker tracker"
+        "guessed guessed";
+    }
+    h1 {
+        font-size: 42px;
+    }
+    #underScores {
+        color: #fff;
+        font-size: 36px;
+    }
+    p {
+        font-size: 20px;
+    }
 }
 @media screen and (min-width: 1280px) {
-
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        ". ."
+        "underscores underscores"
+        ". ."
+        "tracker tracker"
+        "guessed guessed";
+    }
+    #underScores {
+        color: #fff;
+        font-size: 40px;
+    }
+    p {
+        font-size: 20px;
+    }
 }

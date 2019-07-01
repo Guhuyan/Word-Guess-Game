@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script type="text/javascript" src="assets/javascript/game.js"></script>
-    <title>Hangman Game</title>
+    <title>Word Guess Game</title>
 </head>
 <body>
     <div class="grid-container">
@@ -16,7 +16,7 @@
                 <img src="assets/images/bootstrap-icon.svg" class="bs-img" alt="Bootstrap Icon">
             </div>
             <div class="h-flex2">
-                <h1>Hangman Game</h1>
+                <h1>Word Guess Game</h1>
             </div>
         </header>
          <main>
@@ -26,28 +26,35 @@
                     <!--Picture appears here-->
                 </div>
                 <div class="underscores"> <!--Flex-->
-                    <div id="underScores">_ _ _ _ _</div>
+                    <p id="underScores">_ _ _ _ _</p>
                 </div>
                 <div class="tracker"> <!--Flex-->
                     <div class="win-tracker">
                         <p>Win:</p>
                         <!--Tracking win(s) with Javascript-->
-                        <p id="winTracker">0</p>
+                        <p id="winTracker" class="counters">0</p>
+                    </div>
+                    <div class="reminaing-guess">
+                        <p>Remaining Guesses:</p>
+                        <!--Tracking win(s) with Javascript-->
+                        <p id="remainingGuess" class="counters">0</p>
                     </div>
                     <div class="lose-tracker">
                         <p>Lose:</p>
                         <!--Tracking lose(s) with Javascript-->
-                        <p id="loseTracker">0</p>
+                        <p id="loseTracker" class="counters">0</p>
                     </div>
                 </div>
                 <div class="guessed">
-                    <div id="guessedChar">
+                    <p id="guessedChar">
                         Characters Already Guessed<!--The letters that have been guessed will show up here-->
-                    </div>
+                    </p>
                 </div>
+                <!--
                 <div class="hint">
-                    <button id="hint">Hint</button>
+                <button id="hint">Hint</button>
                 </div>
+                -->
              </div>
         </main>
         <footer>

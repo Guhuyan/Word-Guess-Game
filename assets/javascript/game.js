@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       console.log(chosenWord);
       //Clearing the characters that have already been guessed and replace it with its default text.
       document.getElementById("guessedChar").textContent = "Characters Already Guessed";
+      //Setting the Remaining Guess back to its default value of 7
+      document.getElementById("remainingGuess").textContent = remainingGuess;
     }
 
     //Initialize the displayWord array with underscore in each index, then pass it to #underScores in index.html
@@ -48,13 +50,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
       displayWord[i] = "_";
       }
       document.getElementById("underScores").textContent = displayWord.join(" ");
+    
+    //After the DOM is ready, set Remaining Guess to its default value of 7
+    document.getElementById("remainingGuess").textContent = remainingGuess;
 
-      //Create an array to hold all the letters from the chosen word in its own index
-      correctWord = [];
-      for (let r = 0; r < chosenWord.length; r++) {
-        correctWord.push(chosenWord.charAt(r));
-      }
-      console.log(correctWord);
+    //Create an array to hold all the letters from the chosen word in its own index
+    correctWord = [];
+    for (let r = 0; r < chosenWord.length; r++) {
+      correctWord.push(chosenWord.charAt(r));
+    }
+    console.log(correctWord);
 
     //Adding event listener to listen for a keypress.  Once the key is pressed, record the key as a string into a variable called key.
     document.addEventListener("keypress", (event) => {
@@ -75,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         displayGuess.push(key);
         document.getElementById("guessedChar").textContent = displayGuess.join(" ");
         remainingGuess--;
+        document.getElementById("remainingGuess").textContent = remainingGuess;
         if (remainingGuess < 1) {
           loseCounter++;
           document.getElementById("loseTracker").textContent = loseCounter;
